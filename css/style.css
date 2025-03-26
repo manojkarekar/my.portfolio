@@ -1,81 +1,110 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-#navbar{
+
+
+/* navbar css start */
+#navbar {
     width: 100%;
     height: 70px;
     position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  
-    transition: top 0.3s ease-in-out; /* Smooth transition */
+
+    transition: top 0.3s ease-in-out;
+    /* Smooth transition */
     z-index: 999;
 }
 
-.nav{
+.nav {
     display: flex;
     gap: 20px;
 }
-.nav .nav-item{
+
+.nav .nav-item {
     list-style: none;
 }
-.nav  .nav-item  .nav-link{
+
+.nav .nav-item .nav-link {
     text-decoration: none;
     font-size: 21px;
 }
 
-#mobileBtn{
+/* active nav link */
+.nav .nav-item .nav-link.active {
+    color: red;
+    border-bottom: 2px solid red;
+}
+
+#mobileBtn {
     position: absolute;
     right: 25px;
-    font-size:30px;
+    font-size: 30px;
     display: none;
+    cursor: pointer;
 }
+
+/* responsive Navbar Toggle */
+.nav.open {
+    right: 0;
+}
+
 @media screen and (max-width:789px) {
-    
-#mobileBtn{
-display: block;
-}
-    
-    .nav{
+
+    #mobileBtn {
+        display: block;
+    }
+
+    .nav {
         display: flex;
-        position:absolute;
-        width:300px;
+        position: absolute;
+        width: 300px;
         height: 100vh;
-        background-image: linear-gradient(rgba(253, 253, 253,0.9),rgba(135, 135, 240, 0.3));
-        top:0%;
+        background-image: linear-gradient(rgba(253, 253, 253, 0.9), rgba(135, 135, 240, 0.3));
+        top: 0%;
         flex-direction: column;
         align-items: center;
         backdrop-filter: blur(2px);
+        right: -300px;
+        transition: right 0.3s ease-in-out;
     }
 }
 
 /* Background change after scrolling */
 .navbar-scrolled {
-    background-color: rgba(80, 80, 80, 0.8); 
-    top: 0; 
+    background-color: rgba(80, 80, 80, 0.8);
+    top: 0;
 }
 
-.navbar-scrolled .title{
+.title {
+    margin-left: 10px;
+}
+
+.navbar-scrolled .title {
     color: white;
 }
-.navbar-scrolled  .nav-link{
-    color:white;
+
+.navbar-scrolled .nav-link {
+    color: white;
 }
-.navbar-scrolled  .nav-link:hover{
+
+.navbar-scrolled .nav-link:hover {
     border-bottom: 1px solid red;
 }
 
+
+/* navbar css end */
 
 
 /* Social Sidebar Styles */
 .social-sidebar {
     position: fixed;
     top: 50%;
-    right: 0;
+    right: 20px;
     transform: translateY(-50%);
     z-index: 999;
 }
@@ -104,8 +133,8 @@ display: block;
 .social-item::after {
     content: attr(data-name);
     position: absolute;
-    top: 0;
-    left: 50%;
+    top: 0px;
+    right: 6px;
     transform: translateX(-50%);
     opacity: 0;
     visibility: hidden;
@@ -126,7 +155,8 @@ display: block;
 
 /* Icons' hover effect */
 .social-item:hover a {
-    color: #007bff; /* Change color when hovered */
+    color: #007bff;
+    /* Change color when hovered */
 }
 
 /* Mobile Button for Navbar */
@@ -145,16 +175,17 @@ display: block;
 
 
 
-#main-section{
+#main-section {
     background-image: url("../images/bg-img.jpeg");
     width: 100%;
     height: 100vh;
     background-repeat: no-repeat;
-    background-size:auto;
+    background-size: auto;
     background-position: center;
-    
+
 }
-#main-section .container{
+
+#main-section .container {
     width: 100%;
     height: 100vh;
     /* background-color: rgba(51, 51, 51,0.8); */
@@ -168,14 +199,14 @@ display: block;
 
 
 .hero-aria {
-    background-image: linear-gradient(white,rgb(186, 198, 250));
+    background-image: linear-gradient(white, rgb(186, 198, 250));
     padding: 50px 20px;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     height: 100vh;
     width: 100%;
-    
+
 }
 
 
@@ -212,18 +243,18 @@ display: block;
     border-radius: 4px;
     opacity: 0;
     transition: .5s;
-  }
-  
-  .portfolio-item:hover .portfolio-btn {
+}
+
+.portfolio-item:hover .portfolio-btn {
     opacity: 1;
     width: calc(100% - 60px);
     height: calc(100% - 60px);
     top: 30px;
     left: 30px;
-  }
+}
 
 
-  
+
 .blog-date {
     position: absolute;
     width: 60px;
@@ -236,18 +267,18 @@ display: block;
     left: calc(50% - 30px);
     border-radius: 60px;
     background: #0BCEAF;
-  }
-  
-  .contact-form .help-block ul {
+}
+
+.contact-form .help-block ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
-  }
+}
 
-  
 
-  /* portfolio design */
-  .portfolio-item {
+
+/* portfolio design */
+.portfolio-item {
     position: relative;
 }
 
@@ -268,8 +299,8 @@ display: block;
 .portfolio-item:hover .portfolio-info {
     opacity: 1;
     visibility: visible;
-    background-color: rgb(75, 75, 75,0.6);
-        
+    background-color: rgb(75, 75, 75, 0.6);
+
 }
 
 .project-name {
@@ -298,9 +329,9 @@ display: block;
     background-color: #0056b3;
 }
 
-#portfolio{
+#portfolio {
     width: 100%;
-    height:100vh;
+    height: 100vh;
 }
 
 
@@ -310,14 +341,15 @@ display: block;
 
 
 /* hire me section  */
-.ftco-section{
+.ftco-section {
     background-image: url("../assets/images/bg-banner.png");
     height: 300px;
     width: 100%;
     background-position: right;
     background-attachment: fixed;
 }
-.ftco-section .container-fluid{
+
+.ftco-section .container-fluid {
     background-color: rgba(0, 0, 0, 0.6);
     width: 100%;
     height: 300px;
@@ -332,7 +364,8 @@ display: block;
 }
 
 .contact-info .box:hover {
-    transform: translateY(-10px); /* Lift box on hover */
+    transform: translateY(-10px);
+    /* Lift box on hover */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -344,7 +377,8 @@ display: block;
 }
 
 .contact-info .box:hover .icon {
-    color: #0056b3; /* Darker blue on hover */
+    color: #0056b3;
+    /* Darker blue on hover */
 }
 
 .contact-form .form-row .form-control {
@@ -392,5 +426,27 @@ display: block;
 
     .contact-form button {
         font-size: 1rem;
+    }
+}
+
+#contact {
+    padding: 80px 0;
+    overflow: visible;
+    position: relative;
+    display: block;
+
+}
+
+@media (max-width: 984px) {
+    #contact {
+        min-height: 100vh;
+        margin-top: 30vh;
+    }
+}
+
+@media (max-width: 760px) {
+    #contact {
+        min-height: 100vh;
+        margin-top: 1630px;
     }
 }
